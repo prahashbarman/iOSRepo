@@ -12,6 +12,7 @@ class MovieManager {
     
     static let shared = MovieManager()
     private let httpUtility = HttpUtility()
+    private let searchValidator = SearchEntryValidator()
     private init(){}
     
     func getSearchResults(for query: String, completionHandler: @escaping([Movie], MovieSearchError?) -> Void) {
@@ -21,7 +22,10 @@ class MovieManager {
         let requestHeaders: [String:String] = ["X-RapidAPI-Key" : RequestHeaderKeys.rapidApiKey,
                                                "X-RapidAPI-Host": RequestHeaderKeys.rapidApiHost]
         let imdbRequst: URLRequestModel = URLRequestModel(urlString: URLStrings.imdbRatings, requestHeaders: requestHeaders)
-        let queries = [URLQueryItem(name: "q", value: query)]
+        var queries: [URLQueryItem] = []
+        if searchValidator.validate(query: query) {
+            queries = [URLQueryItem(name: "q", value: query)]
+        }
         let urlRequest: URLRequest = imdbRequst.urlRequest
         
         httpUtility.getApiData(requestUrl: urlRequest, requestBody: nil, queries: queries) { (searchResult:MovieSearchDictionary?, error: Error?) in
@@ -49,5 +53,15 @@ class MovieManager {
             let image = UIImage(data: imageData)
             completionHandler(image)
         }
+    }
+}
+
+struct SearchEntryValidator {
+    
+    func validate(query: String) -> Bool {
+        if (query.count > 4) {
+            return true
+        }
+        return false
     }
 }

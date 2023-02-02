@@ -32,8 +32,6 @@ class MovieSearchViewController: UIViewController {
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         
-        guard (textField.text?.count ?? 0 >= 5) else { return }
-        
         movieSearchResultViewModel.searchMovie(with: textField.text ?? "")
         
         DispatchQueue.main.async {

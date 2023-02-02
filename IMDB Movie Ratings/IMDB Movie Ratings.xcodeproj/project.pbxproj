@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69789D6B298B945B00FCC8E7 /* IMDB_Movie_RatingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69789D6A298B945B00FCC8E7 /* IMDB_Movie_RatingsTests.swift */; };
+		69789D72298B9C5200FCC8E7 /* ValidationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69789D71298B9C5200FCC8E7 /* ValidationTest.swift */; };
 		69EEEA63298A42DD00D3EDB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EEEA62298A42DD00D3EDB1 /* AppDelegate.swift */; };
 		69EEEA65298A42DD00D3EDB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EEEA64298A42DD00D3EDB1 /* SceneDelegate.swift */; };
 		69EEEA67298A42DD00D3EDB1 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EEEA66298A42DD00D3EDB1 /* MovieSearchViewController.swift */; };
@@ -24,7 +26,20 @@
 		69EEEA8C298A8A1600D3EDB1 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EEEA8B298A8A1600D3EDB1 /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		69789D6C298B945B00FCC8E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69EEEA57298A42DD00D3EDB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69EEEA5E298A42DD00D3EDB1;
+			remoteInfo = "IMDB Movie Ratings";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		69789D68298B945B00FCC8E7 /* IMDB Movie RatingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IMDB Movie RatingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69789D6A298B945B00FCC8E7 /* IMDB_Movie_RatingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDB_Movie_RatingsTests.swift; sourceTree = "<group>"; };
+		69789D71298B9C5200FCC8E7 /* ValidationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTest.swift; sourceTree = "<group>"; };
 		69EEEA5F298A42DD00D3EDB1 /* IMDB Movie Ratings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IMDB Movie Ratings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EEEA62298A42DD00D3EDB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69EEEA64298A42DD00D3EDB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +60,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		69789D65298B945B00FCC8E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69EEEA5C298A42DD00D3EDB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,10 +77,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69789D69298B945B00FCC8E7 /* IMDB Movie RatingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				69789D6A298B945B00FCC8E7 /* IMDB_Movie_RatingsTests.swift */,
+				69789D71298B9C5200FCC8E7 /* ValidationTest.swift */,
+			);
+			path = "IMDB Movie RatingsTests";
+			sourceTree = "<group>";
+		};
 		69EEEA56298A42DD00D3EDB1 = {
 			isa = PBXGroup;
 			children = (
 				69EEEA61298A42DD00D3EDB1 /* IMDB Movie Ratings */,
+				69789D69298B945B00FCC8E7 /* IMDB Movie RatingsTests */,
 				69EEEA60298A42DD00D3EDB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				69EEEA5F298A42DD00D3EDB1 /* IMDB Movie Ratings.app */,
+				69789D68298B945B00FCC8E7 /* IMDB Movie RatingsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +202,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		69789D67298B945B00FCC8E7 /* IMDB Movie RatingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69789D70298B945B00FCC8E7 /* Build configuration list for PBXNativeTarget "IMDB Movie RatingsTests" */;
+			buildPhases = (
+				69789D64298B945B00FCC8E7 /* Sources */,
+				69789D65298B945B00FCC8E7 /* Frameworks */,
+				69789D66298B945B00FCC8E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69789D6D298B945B00FCC8E7 /* PBXTargetDependency */,
+			);
+			name = "IMDB Movie RatingsTests";
+			productName = "IMDB Movie RatingsTests";
+			productReference = 69789D68298B945B00FCC8E7 /* IMDB Movie RatingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		69EEEA5E298A42DD00D3EDB1 /* IMDB Movie Ratings */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69EEEA76298A42E300D3EDB1 /* Build configuration list for PBXNativeTarget "IMDB Movie Ratings" */;
@@ -196,6 +247,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					69789D67298B945B00FCC8E7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 69EEEA5E298A42DD00D3EDB1;
+					};
 					69EEEA5E298A42DD00D3EDB1 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -215,11 +270,19 @@
 			projectRoot = "";
 			targets = (
 				69EEEA5E298A42DD00D3EDB1 /* IMDB Movie Ratings */,
+				69789D67298B945B00FCC8E7 /* IMDB Movie RatingsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		69789D66298B945B00FCC8E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69EEEA5D298A42DD00D3EDB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +296,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		69789D64298B945B00FCC8E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69789D72298B9C5200FCC8E7 /* ValidationTest.swift in Sources */,
+				69789D6B298B945B00FCC8E7 /* IMDB_Movie_RatingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69EEEA5B298A42DD00D3EDB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +326,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		69789D6D298B945B00FCC8E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69EEEA5E298A42DD00D3EDB1 /* IMDB Movie Ratings */;
+			targetProxy = 69789D6C298B945B00FCC8E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		69EEEA68298A42DD00D3EDB1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -274,6 +354,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		69789D6E298B945B00FCC8E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CRQ957J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prahash.test.IMDB-Movie-RatingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMDB Movie Ratings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IMDB Movie Ratings";
+			};
+			name = Debug;
+		};
+		69789D6F298B945B00FCC8E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CRQ957J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prahash.test.IMDB-Movie-RatingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMDB Movie Ratings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IMDB Movie Ratings";
+			};
+			name = Release;
+		};
 		69EEEA74298A42E300D3EDB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,6 +565,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		69789D70298B945B00FCC8E7 /* Build configuration list for PBXNativeTarget "IMDB Movie RatingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69789D6E298B945B00FCC8E7 /* Debug */,
+				69789D6F298B945B00FCC8E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		69EEEA5A298A42DD00D3EDB1 /* Build configuration list for PBXProject "IMDB Movie Ratings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
