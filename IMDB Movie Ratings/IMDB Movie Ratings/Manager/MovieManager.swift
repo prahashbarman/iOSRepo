@@ -37,8 +37,6 @@ class MovieManager {
             } else if error != nil {
                 debugPrint("Error in network call: \(String(describing: error?.localizedDescription))")
                 completionHandler([], .NetworkError)
-            } else {
-                completionHandler([], .NoResult)
             }
         }
     }

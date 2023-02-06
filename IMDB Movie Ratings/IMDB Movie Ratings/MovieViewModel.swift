@@ -8,10 +8,11 @@
 import Foundation
 
 protocol MovieViewModelDelegate {
-    func didReceiveMovieResult(result: [MovieViewModel], error: MovieSearchError?)
+    func didReceiveMovieResult(result: [MovieViewModel])
+    func failedToReceiveMovieResult(with error: MovieSearchError)
 }
 
-enum MovieSearchError {
+enum MovieSearchError : Error {
     case NoResult
     case NetworkError
     case ParsingError
@@ -27,9 +28,12 @@ struct MovieSearchResultViewModel {
         MovieManager.shared.getSearchResults(for: query) { (movies: [Movie], error: MovieSearchError?) in
             
             guard error == nil else {
-                DispatchQueue.main.async {
-                    self.delegate?.didReceiveMovieResult(result: [], error: error)
-                }
+                self.delegate?.failedToReceiveMovieResult(with: error!)
+                return
+            }
+            
+            guard movies.count > 0 else {
+                self.delegate?.failedToReceiveMovieResult(with: .NoResult)
                 return
             }
             
@@ -41,7 +45,7 @@ struct MovieSearchResultViewModel {
             }
             
             DispatchQueue.main.async {
-                self.delegate?.didReceiveMovieResult(result: searchResults, error: nil)
+                self.delegate?.didReceiveMovieResult(result: searchResults)
             }
         }
     }

@@ -27,7 +27,9 @@ class MovieSearchViewController: UIViewController {
     }
     
     @objc func dismissKeyboard() {
-        view.endEditing(true)
+        DispatchQueue.main.async {
+            self.view.endEditing(true)
+        }
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -68,29 +70,37 @@ extension MovieSearchViewController: UITableViewDataSource, UITableViewDelegate 
 
 extension MovieSearchViewController : MovieViewModelDelegate {
     
-    func didReceiveMovieResult(result: [MovieViewModel], error: MovieSearchError?) {
-        
-        guard error == nil else {
-            debugPrint(error.debugDescription)
-            return
-        }
-        
-        guard result.count > 0 else {
-            let alertController: UIAlertController = UIAlertController(title: "Search Result",
-                                                                       message: "No result matched your search criteria. Try searching again with other keywords",
-                                                                       preferredStyle: .alert)
-            let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel)
-            alertController.addAction(alertAction)
-            DispatchQueue.main.async {
-                self.textField.text = ""
-                self.present(alertController, animated: true)
-                self.tableView.reloadData()
-            }
-            return
-        }
+    func didReceiveMovieResult(result: [MovieViewModel]) {
         
         movieSearchResultViewModel.movieData = result
         DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func failedToReceiveMovieResult(with error: MovieSearchError) {
+        
+        var alertMessage: String = ""
+        
+        switch error {
+        case .NoResult:
+            alertMessage = "There was no matching result against your search criteria. Please try again with other keywords."
+        case .NetworkError:
+            alertMessage = "There was a problem in your internet connection. Please ensure you have a stable network."
+        case .ParsingError:
+            alertMessage = "An error occurred. Please try again."
+            debugPrint(error.localizedDescription)
+        }
+        
+        let alertController: UIAlertController = UIAlertController(title: "Search Result",
+                                                                   message: alertMessage,
+                                                                   preferredStyle: .alert)
+        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel)
+        alertController.addAction(alertAction)
+        DispatchQueue.main.async {
+            self.textField.text = ""
+            self.present(alertController, animated: true)
+            self.movieSearchResultViewModel.movieData = []
             self.tableView.reloadData()
         }
     }
